@@ -30,7 +30,15 @@
 <script src="https://sdk.games.s3.yandex.net/sdk.js"></script>
 <!-- Yandex Games SDK -->
 <!-- <script src="https://yandex.ru/games/sdk/v2"></script>-->
+<script>
+  YaGames
+      .init()
+      .then(ysdk => {
+          console.log('Yandex SDK initialized');
+          window.ysdk = ysdk;
+});
 
+</script>
   </head>
   
   <body id="unity-body-style">
@@ -44,15 +52,7 @@
       </div>
     </div>
 
-    <script>
-      YaGames
-          .init()
-          .then(ysdk => {
-              console.log('Yandex SDK initialized');
-              window.ysdk = ysdk;
-    });
 
-    </script>
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
