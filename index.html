@@ -26,17 +26,6 @@
 
 
 
-<!-- Yandex Games SDK -->
-<script src="https://sdk.games.s3.yandex.net/sdk.js"></script>
-
-<script>
-  YaGames
-      .init()
-      .then(ysdk => {
-          window.ysdk = ysdk;
-});
-
-</script>
   </head>
   
   <body id="unity-body-style">
@@ -66,11 +55,11 @@
     
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Yendex Save Fish.loader.js";
+      var loaderUrl = buildUrl + "/YendexSaveFish.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Yendex Save Fish.data",
-        frameworkUrl: buildUrl + "/Yendex Save Fish.framework.js",
-        codeUrl: buildUrl + "/Yendex Save Fish.wasm",
+        dataUrl: buildUrl + "/YendexSaveFish.data",
+        frameworkUrl: buildUrl + "/YendexSaveFish.framework.js",
+        codeUrl: buildUrl + "/YendexSaveFish.wasm",
         companyName: "GreatGigs",
         productName: "Save Those Fishes",
         productVersion: "1.0.0",
@@ -96,6 +85,7 @@
 
       var script = document.createElement("script");
       script.src = loaderUrl;
+
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
@@ -106,6 +96,11 @@
           alert(message);
         });
       };
+
+
+
+
+
       document.body.appendChild(script);
     </script>
   </body>
